@@ -1,0 +1,40 @@
+h1 {
+    background-color: #1B4958;
+    color: #FF1A1A;
+}
+
+html {
+    background-color: #181A1B;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 50px;
+    text-align: center;
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* This is where the message will appear */
+#response-text {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
