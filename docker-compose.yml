@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend-test
+    # This keeps the backend private, only accessible to the load-Balancer via internal Docker network
+    networks:
+      - cicd_net
+    restart: unless-stopped
+
+  app1:
+    build: ./app-html
+    networks:
+      - cicd_net
+    restart: unless-stopped
+
+  app2:
+    build: ./app-html
+    networks:
+      - cicd_net
+    restart: unless-stopped
+
+  app3:
+    build: ./app-html
+    networks:
+      - cicd_net
+    restart: unless-stopped
+
+  load-balancer:
+    image: nginx:1.25-alpine
+    volumes:
+      - ./nginx-lb.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - app1
+      - app2
+      - app3
+    networks:
+      - cicd_net
+    restart: unless-stopped
+
+networks:
+  cicd_net:
+    driver: bridge
