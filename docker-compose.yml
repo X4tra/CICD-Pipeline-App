@@ -3,7 +3,6 @@ version: '3.8'
 services:
   backend:
     build: ./backend-test
-    # This keeps the backend private, only accessible to the load-Balancer via internal Docker network
     networks:
       - cicd_net
     restart: unless-stopped

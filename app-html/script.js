@@ -7,8 +7,8 @@ async function handleButtonClick(index) {
     display.innerText = "Loading...";
 
     try {
-        // Change 'localhost' to your IP if testing on different devices
-        const response = await fetch(`http://localhost:8000${index}`);
+        // Use relative path so the request goes through the Nginx Load Balancer proxy
+        const response = await fetch(`/api${index}`);
         const data = await response.json();
 
         // Update the screen with the message from Python
