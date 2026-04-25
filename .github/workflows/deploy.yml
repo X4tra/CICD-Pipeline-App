@@ -35,35 +35,36 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             cd /app
+            git config --global --add safe.directory /app
             
             echo "Pulling latest code from main..."
             git pull origin main
             
             echo "Building new Docker images..."
-            docker compose build
+            docker-compose build
             
             echo "Starting Rolling Release..."
             
             # Restart App 1
             echo "Updating App 1..."
-            docker compose up -d --no-deps app1
+            docker-compose up -d --no-deps app1
             sleep 5
             
             # Restart App 2
             echo "Updating App 2..."
-            docker compose up -d --no-deps app2
+            docker-compose up -d --no-deps app2
             sleep 5
             
             # Restart App 3
             echo "Updating App 3..."
-            docker compose up -d --no-deps app3
+            docker-compose up -d --no-deps app3
             sleep 5
             
             # Restart Backend
             echo "Updating Backend..."
-            docker compose up -d --no-deps backend
+            docker-compose up -d --no-deps backend
             
             # Make sure load balancer is completely up in case of updates
-            docker compose up -d --no-deps load-balancer
+            docker-compose up -d --no-deps load-balancer
             
             echo "Deployment Completed Successfully!"
