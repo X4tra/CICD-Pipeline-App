@@ -16,4 +16,4 @@ def test():
 
 @app.get('/status')
 def status():
-    return {"message": "Up and running!"}
+    return {"message": "Up and running!!"}
