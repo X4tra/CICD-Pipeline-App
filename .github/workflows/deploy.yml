@@ -46,21 +46,29 @@ jobs:
             
             # Restart App 1
             echo "Updating App 1..."
+            docker-compose stop app1
+            docker-compose rm -f app1
             docker-compose up -d --no-deps app1
             sleep 5
             
             # Restart App 2
             echo "Updating App 2..."
+            docker-compose stop app2
+            docker-compose rm -f app2
             docker-compose up -d --no-deps app2
             sleep 5
             
             # Restart App 3
             echo "Updating App 3..."
+            docker-compose stop app3
+            docker-compose rm -f app3
             docker-compose up -d --no-deps app3
             sleep 5
             
             # Restart Backend
             echo "Updating Backend..."
+            docker-compose stop backend
+            docker-compose rm -f backend
             docker-compose up -d --no-deps backend
             
             # Make sure load balancer is completely up in case of updates
