@@ -35,7 +35,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             cd /app
-            git config --global --add safe.directory /app
             
             echo "Pulling latest code from main..."
             git pull origin main
