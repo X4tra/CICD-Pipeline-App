@@ -45,7 +45,7 @@ To achieve **Zero-Downtime Deployments**, the script executes the following roll
 
 ## Local Development
 
-If you're reviewing this for recruitment purposes and want to test it locally:
+If you're reviewing this and want to test it locally:
 
 1. Clone the repository:
    ```bash
