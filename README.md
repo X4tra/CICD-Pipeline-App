@@ -1,10 +1,10 @@
-# 🚀 Automated CI/CD Pipeline & Microservice Architecture
+# Automated CI/CD Pipeline & Microservice Architecture
 
 [![CI/CD Pipeline](https://github.com/X4tra/CICD-Pipeline-App/actions/workflows/deploy.yml/badge.svg)](https://github.com/X4tra/CICD-Pipeline-App/actions)
 
 Welcome! This repository demonstrates a production-grade **Continuous Integration and Continuous Deployment (CI/CD)** pipeline integrated with a multi-container microservice architecture. It is built to showcase robust DevOps practices, including automated testing, containerization, load balancing, and zero-downtime rolling deployments over SSH.
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 The infrastructure relies on Docker Compose to orchestrate a distributed environment, routing traffic logically through an Nginx load balancer to a backend API and three redundant frontend instances.
 
@@ -14,7 +14,7 @@ The infrastructure relies on Docker Compose to orchestrate a distributed environ
 
 ---
 
-## ⚙️ DevOps & CI/CD Workflow
+## DevOps & CI/CD Workflow
 
 The backbone of this repository is an automated GitHub Actions pipeline designed to minimize manual intervention while safeguarding production integrity.
 
@@ -35,7 +35,7 @@ To achieve **Zero-Downtime Deployments**, the script executes the following roll
 
 ---
 
-## 🛠️ Tech Stack Found Here
+## Tech Stack Found Here
 * **CI/CD Configuration:** GitHub Actions (YAML), Bash Scripting, SSH Automation
 * **Containerization:** Docker, Docker Compose V2, Docker Networking
 * **Web Server/Routing:** Nginx (Load Balancing & Static Serving)
@@ -43,7 +43,7 @@ To achieve **Zero-Downtime Deployments**, the script executes the following roll
 
 ---
 
-## 💻 Local Development
+## Local Development
 
 If you're reviewing this for recruitment purposes and want to test it locally:
 
