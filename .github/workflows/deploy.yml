@@ -66,4 +66,17 @@ jobs:
             # Make sure load balancer is completely up in case of updates
             docker compose up -d --no-deps load-balancer
             
+            echo "Waiting for containers to stabilize..."
+            sleep 10
+            
+
+            RUNNING_COUNT=$(docker compose ps --status running -q | wc -l)
+            if [ "$RUNNING_COUNT" -ne "5" ]; then
+              echo "ERROR: Expected 5 containers running, but found $RUNNING_COUNT."
+              docker compose ps
+              docker compose logs --tail=50
+              exit 1
+            fi
+            
+            echo "All containers are healthy!"
             echo "Deployment Completed Successfully!"
